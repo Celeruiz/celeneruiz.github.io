@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Animales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav button:hover {
+            background-color: #45a049;
+        }
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .animal {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .animal img {
+            width: 200px;
+            height: 150px;
+            border-radius: 5px;
+        }
+        #loginSection, #gallery, #feedback {
+            display: none;
+        }
+        #loginSection.active, #gallery.active, #feedback.active {
+            display: block;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+        form label {
+            margin-right: 10px;
+        }
+        form select, form button {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a la Galería de Animales</h1>
+    </header>
+    <nav>
+        <button onclick="showSection('loginSection')">Inicio de Sesión</button>
+        <button onclick="showSection('gallery')">Galería</button>
+        <button onclick="showSection('feedback')">Calificar Página</button>
+    </nav>
+
+    <div id="loginSection" class="content">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="login(event)">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
+            <br><br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+            <br><br>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <div id="gallery" class="content">
+        <h2>Galería de Animales</h2>
+        <div class="animal">
+            <h3>León</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/002_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg/1200px-002_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg" alt="León">
+            <p>El rey de la selva, conocido por su fuerza.</p>
+        </div>
+        <div class="animal">
+            <h3>Elefante</h3>
+            <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2019/08/12/thumbs_b_c_c7af5686e70ccf47bec65de052f6d610.jpg?v=192329" alt="Elefante">
+            <p>El animal terrestre más grande del mundo.</p>
+        </div>
+        <div class="animal">
+            <h3>Delfín</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbDVcGGMqUh3XOnCw4ER3aespfebr1D5B6-GdZFbnFly-_QYerpiDOtScCHi36FZ_MFew&usqp=CAU" alt="Delfín">
+            <p>Un mamífero marino muy inteligente.</p>
+        </div>
+        <div class="animal">
+            <h3>Tigre</h3>
+            <img src="https://static.nationalgeographicla.com/files/styles/image_3200/public/tigre-do-sul-da-china_suedchinesischer_tiger.webp?w=1600&h=1247" alt="Tigre">
+            <p>Un felino poderoso con un pelaje distintivo.</p>
+        </div>
+        <div class="animal">
+            <h3>Oso Polar</h3>
+            <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/12/how-to-draw-a-polar-bear-photo-1.jpg" alt="Oso Polar">
+            <p>Un habitante del Ártico, experto nadador.</p>
+        </div>
+        <div class="animal">
+            <h3>Panda</h3>
+            <img src="https://www.muyinteresante.com/wp-content/uploads/sites/5/2022/10/13/634810b0a240f.jpeg" alt="Panda">
+            <p>Conocido por su amor al bambú y su apariencia adorable.</p>
+        </div>
+        <div class="animal">
+            <h3>Águila</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Bald_Eagle_%28Haliaeetus_leucocephalus%29_Kachemak_Bay%2C_Alaska.jpg" alt="Águila">
+            <p>Un ave majestuosa con una visión excepcional.</p>
+        </div>
+        <div class="animal">
+            <h3>Rinoceronte</h3>
+            <img src="https://www.expoknews.com/wp-content/uploads/2018/05/La-esperanza-en-los-rinocerontes-blancos-768x512.jpg" alt="Rinoceronte">
+            <p>Un gigante con un cuerno distintivo.</p>
+        </div>
+        <div class="animal">
+            <h3>Cocodrilo</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Nile_crocodile_head.jpg/1200px-Nile_crocodile_head.jpg" alt="Cocodrilo">
+            <p>Un reptil acuático con mandíbulas poderosas.</p>
+        </div>
+        <div class="animal">
+            <h3>Guepardo</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TheCheethcat.jpg" alt="Guepardo">
+            <p>El animal terrestre más rápido del mundo.</p>
+        </div>
+    </div>
+
+    <div id="feedback" class="content">
+        <h2>Califica Nuestra Página</h2>
+        <form onsubmit="submitFeedback(event)">
+            <label for="rating">Calificación (1-5):</label>
+            <select id="rating" required>
+                <option value="">Selecciona</option>
+                <option value="1">1 - Muy mala</option>
+                <option value="2">2 - Mala</option>
+                <option value="3">3 - Regular</option>
+                <option value="4">4 - Buena</option>
+                <option value="5">5 - Excelente</option>
+            </select>
+            <br><br>
+            <button type="submit">Enviar Calificación</button>
+        </form>
+        <p id="feedbackMessage"></p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                alert(`¡Bienvenido, ${username}!`);
+                showSection('gallery');
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+
+        function submitFeedback(event) {
+            event.preventDefault();
+            const rating = document.getElementById('rating').value;
+            if (rating) {
+                document.getElementById('feedbackMessage').innerText = `Gracias por tu calificación: ${rating} estrella(s)!`;
+                document.getElementById('rating').value = '';
+            } else {
+                alert('Por favor, selecciona una calificación.');
+            }
+        }
+
+        // Mostrar la sección de inicio de sesión al cargar la página
+        showSection('loginSection');
+    </script>
+</body>
+</html>
